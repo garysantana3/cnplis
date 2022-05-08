@@ -15,7 +15,7 @@ interface CineApiClient {
 
     @POST(Endpoints.LOGIN)
     suspend fun setLogin(
-        @Body data: String
+        @Body data: LoginRequest
     ): Response<LoginResponse>
 
     //GET

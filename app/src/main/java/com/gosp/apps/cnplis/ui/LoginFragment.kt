@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.gosp.apps.cnplis.databinding.LoginFragmentBinding
@@ -34,12 +35,21 @@ class LoginFragment: Fragment() {
         viewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
 
         binding.btDoLogin.setOnClickListener{
-            viewModel.doLogin(LoginRequest(
-                username = binding.etUser.text.toString(),
-                password = binding.etPassword.text.toString()
-            ),requireActivity())
-
-            viewModel.getMovies()
+            if (!binding.etUser.text.isNullOrEmpty() && !binding.etPassword.text.isNullOrEmpty()){
+                viewModel.doLogin(LoginRequest(
+                    username = binding.etUser.text.toString(),
+                    password = binding.etPassword.text.toString()
+                ),requireActivity())
+                viewModel.getMovies()
+            }else{
+                Toast.makeText(requireContext(), "Ingresa Usuario y Contraseña", Toast.LENGTH_SHORT).show()
+            }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.etUser.text.clear()
+        binding.etPassword.text.clear()
     }
 }

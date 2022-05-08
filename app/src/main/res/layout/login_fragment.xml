@@ -31,7 +31,6 @@
                 android:hint="@string/user_txt"
                 android:imeOptions="actionDone"
                 android:inputType="text"
-                android:text="pruebas_beto_ia@yahoo.com"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -50,8 +49,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 style="@style/EditTextDefault"
-                android:autofillHints=""
-                android:text="Pruebas01"/>
+                android:autofillHints=""/>
             <Button
                 android:id="@+id/btDoLogin"
                 android:layout_width="wrap_content"
