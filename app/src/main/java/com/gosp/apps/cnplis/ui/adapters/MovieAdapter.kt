@@ -18,7 +18,7 @@ class MovieAdapter(
     private val list: ArrayList<Movie>,
     private val routes: ArrayList<Route>,
     private val activity: Activity,
-    private var onItemClick: (id: String) -> Unit
+    private var onItemClick: (movie: Movie) -> Unit
 ) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -41,7 +41,7 @@ class MovieAdapter(
             data: Movie,
             routes: Route,
             activity: Activity,
-            onItemClick: (id: String) -> Unit
+            onItemClick: (movie: Movie) -> Unit
         ) {
             binding.tvTitle.text = data.name
             binding.tvTime.text = "Duración: ${data.length}"
@@ -51,13 +51,14 @@ class MovieAdapter(
                 .with(activity)
                 .load(posterBaseUrl.replace("http://","https://") + data.media[0].resource)
                 .asBitmap()
+                .placeholder(R.drawable.ic_no_image)
                 .skipMemoryCache(true)
                 .fitCenter()
                 .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(binding.ivMovie)
 
             binding.row.setOnClickListener {
-                //onItemClick(data.id)
+                onItemClick(data)
             }
 
         }

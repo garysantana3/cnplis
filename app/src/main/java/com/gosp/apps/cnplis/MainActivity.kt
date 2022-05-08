@@ -8,6 +8,7 @@ import androidx.lifecycle.*
 import com.gosp.apps.cnplis.main.MainViewModel
 import com.gosp.apps.cnplis.ui.HomeFragment
 import com.gosp.apps.cnplis.ui.LoginFragment
+import com.gosp.apps.cnplis.ui.MovieDetailFragment
 import com.gosp.apps.mlapp.mlapp.utils.Enums
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,6 +37,14 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
                     .beginTransaction()
                     .replace(R.id.container, HomeFragment.newInstance())
                     .addToBackStack("search_result")
+                    .commit()
+
+            }
+            Enums.ViewStates.MOVIE_DETAIL -> {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.container, MovieDetailFragment.newInstance())
+                    .addToBackStack("movie_detail")
                     .commit()
 
             }

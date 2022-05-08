@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gosp.apps.cnplis.api.CineServices
 import com.gosp.apps.cnplis.models.Movie
+import com.gosp.apps.cnplis.models.Route
 import com.gosp.apps.cnplis.models.request.LoginRequest
 import com.gosp.apps.cnplis.models.response.ListMoviesResponse
 import com.gosp.apps.mlapp.mlapp.utils.Enums
@@ -17,6 +18,8 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(private val services: CineServices): ViewModel() {
 
     var dataList = MutableLiveData<ListMoviesResponse>()
+    var movieSelect = MutableLiveData<Movie>()
+    var route: Route? = null
 
     // Create a LiveData
     val viewState: MutableLiveData<Enums.ViewStates> by lazy {
@@ -24,6 +27,7 @@ class MainViewModel @Inject constructor(private val services: CineServices): Vie
     }
 
     init {
+        route =  null
         viewState.value = Enums.ViewStates.LOGIN
     }
 
@@ -60,8 +64,16 @@ class MainViewModel @Inject constructor(private val services: CineServices): Vie
         }
     }
 
-    fun getMovieDetail(id:String, context: Context){
-
+    fun getMovieDetail(movie: Movie,routes: Route, context: Context){
+        viewModelScope.launch {
+            try {
+                movieSelect.value = movie
+                route = routes
+                changeState(Enums.ViewStates.MOVIE_DETAIL)
+            }catch (e:Exception){
+                changeState(Enums.ViewStates.SOMETHING_WRONG)
+            }
+        }
     }
 
 }

@@ -4,4 +4,5 @@
     <string name="psw_txt">  Contraseña</string>
     <string name="btn_login_txt">Iniciar sesión</string>
     <string name="title_cartelera">Cartelera</string>
+    <string name="title_detail">Detalle Película</string>
 </resources>

@@ -40,8 +40,8 @@ class HomeFragment : Fragment() {
     private fun setDataAdapter(list: ListMoviesResponse) {
         binding.rvListMovies.setHasFixedSize(true)
         val adapter = MovieAdapter(list.movies,list.routes, requireActivity(),
-            onItemClick = { id ->
-                viewModel.getMovieDetail(id,requireContext())
+            onItemClick = { movie ->
+                viewModel.getMovieDetail(movie,list.routes[3],requireContext())
             })
         binding.rvListMovies.adapter = adapter
     }
