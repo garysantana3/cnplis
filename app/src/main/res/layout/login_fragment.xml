@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.gosp.apps.cnplis.ui.LoginFragment">
+    <androidx.core.widget.NestedScrollView
+        android:animateLayoutChanges="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cn_blue">
+        <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+            android:layout_margin="@dimen/dimen_margin_medium_large">
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_cnplis"
+            android:layout_marginBottom="@dimen/dimen_margin_extra_big"
+            app:layout_constraintStart_toStartOf="@+id/etUser"
+            app:layout_constraintEnd_toEndOf="@+id/etUser"
+            app:layout_constraintBottom_toTopOf="@+id/etUser"/>
+
+            <EditText
+                android:id="@+id/etUser"
+                style="@style/EditTextDefault"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:autofillHints=""
+                android:hint="@string/user_txt"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:text="pruebas_beto_ia@yahoo.com"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/psw_txt"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:layout_marginTop="@dimen/dimen_margin_large"
+                app:layout_constraintTop_toBottomOf="@+id/etUser"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/EditTextDefault"
+                android:autofillHints=""
+                android:text="Pruebas01"/>
+            <Button
+                android:id="@+id/btDoLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_login_txt"
+                android:textColor="@color/cn_blue"
+                android:background="@color/white"
+                android:padding="@dimen/dimen_margin_large"
+                android:layout_marginTop="@dimen/dimen_margin_mega_small"
+                app:layout_constraintTop_toBottomOf="@+id/etPassword"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

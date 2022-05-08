@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_margin_nano">4dp</dimen>
+    <dimen name="dimen_margin_small">8dp</dimen>
+    <dimen name="dimen_margin_medium">12dp</dimen>
+    <dimen name="dimen_margin_medium_large">16dp</dimen>
+    <dimen name="dimen_margin_large">18dp</dimen>
+    <dimen name="dimen_margin_big">20dp</dimen>
+    <dimen name="dimen_margin_extra_big">26dp</dimen>
+    <dimen name="dimen_margin_mega_small">50dp</dimen>
+
+    <dimen name="smallTextSize">12dp</dimen>
+    <dimen name="defaultTextSize">16dp</dimen>
+    <dimen name="interTextSize">18dp</dimen>
+    <dimen name="mediumTextSize">20dp</dimen>
+    <dimen name="largeTextSize">24dp</dimen>
+</resources>

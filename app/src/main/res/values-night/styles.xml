@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom editText -->
+    <style name="EditTextDefault" parent="android:Widget.EditText">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/defaultTextSize</item>
+        <item name="android:layout_marginStart">@dimen/dimen_margin_big</item>
+        <item name="android:layout_marginEnd">@dimen/dimen_margin_big</item>
+    </style>
+</resources>
