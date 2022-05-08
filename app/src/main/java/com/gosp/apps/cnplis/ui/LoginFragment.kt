@@ -38,6 +38,8 @@ class LoginFragment: Fragment() {
                 username = binding.etUser.text.toString(),
                 password = binding.etPassword.text.toString()
             ),requireActivity())
+
+            viewModel.getMovies()
         }
     }
 }

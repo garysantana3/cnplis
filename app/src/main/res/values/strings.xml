@@ -3,4 +3,5 @@
     <string name="user_txt">  Usuario</string>
     <string name="psw_txt">  Contraseña</string>
     <string name="btn_login_txt">Iniciar sesión</string>
+    <string name="title_cartelera">Cartelera</string>
 </resources>

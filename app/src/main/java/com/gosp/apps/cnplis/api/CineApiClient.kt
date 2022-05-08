@@ -2,6 +2,7 @@ package com.gosp.apps.cnplis.api
 
 
 import com.gosp.apps.cnplis.models.request.LoginRequest
+import com.gosp.apps.cnplis.models.response.ListMoviesResponse
 import com.gosp.apps.cnplis.models.response.LoginResponse
 import com.gosp.apps.mlapp.mlapp.utils.Enums
 import retrofit2.Response
@@ -20,9 +21,6 @@ interface CineApiClient {
     //GET
 
     @GET(Endpoints.MOVIES)
-    suspend fun getListMovies(
-        @Body data: String
-    ): Response<LoginResponse>
-
+    suspend fun getListMovies(): Response<ListMoviesResponse>
 
 }

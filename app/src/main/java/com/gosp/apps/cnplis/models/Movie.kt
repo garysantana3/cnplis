@@ -1,15 +1,19 @@
 package com.gosp.apps.cnplis.models
 
 data class Movie(
-    val address: String,
-    val city_id: String,
-    val id: String,
-    val lat: String,
-    val lng: String,
+    val cast: List<Cast>,
+    val categories: List<String>,
+    val cinemas: List<Any>,
+    val code: String,
+    val distributor: String,
+    val genre: String,
+    val id: Int,
+    val length: String,
+    val media: List<Media>,
     val name: String,
-    val phone: String,
+    val original_name: String,
     val position: Int,
-    val settings: Settings,
-    val uris: String,
-    val vista_id: String
+    val rating: String,
+    val release_date: String,
+    val synopsis: String
 )

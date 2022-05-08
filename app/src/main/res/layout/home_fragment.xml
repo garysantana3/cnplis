@@ -6,7 +6,33 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.gosp.apps.cnplis.ui.HomeFragment">
+        tools:context="com.gosp.apps.cnplis.ui.HomeFragment"
+        android:background="@color/cn_blue"
+        android:paddingTop="@dimen/dimen_margin_large"
+        android:paddingBottom="@dimen/dimen_margin_large">
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/mediumTextSize"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/title_cartelera"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListMovies"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dimen_margin_nano"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                tools:listitem="@layout/row_movie" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

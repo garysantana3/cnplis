@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.gosp.apps.cnplis.databinding.HomeFragmentBinding
-import com.gosp.apps.cnplis.databinding.LoginFragmentBinding
 import com.gosp.apps.cnplis.main.MainViewModel
+import com.gosp.apps.cnplis.models.Movie
+import com.gosp.apps.cnplis.models.response.ListMoviesResponse
+import com.gosp.apps.cnplis.ui.adapters.MovieAdapter
 
 class HomeFragment : Fragment() {
 
@@ -32,5 +34,15 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
+        viewModel.dataList.observe(viewLifecycleOwner) { setDataAdapter(it) }
+    }
+
+    private fun setDataAdapter(list: ListMoviesResponse) {
+        binding.rvListMovies.setHasFixedSize(true)
+        val adapter = MovieAdapter(list.movies,list.routes, requireActivity(),
+            onItemClick = { id ->
+                viewModel.getMovieDetail(id,requireContext())
+            })
+        binding.rvListMovies.adapter = adapter
     }
 }
